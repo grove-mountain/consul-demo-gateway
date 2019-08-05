@@ -8,6 +8,6 @@ ADD app/ app/
 WORKDIR /app
 
 # The internal port for the application
-EXPOSE 8080
+EXPOSE 8000
 
 ENTRYPOINT ["python","app.py"]

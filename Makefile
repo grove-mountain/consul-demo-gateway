@@ -1,6 +1,6 @@
 BUILD_ID := $(shell git rev-parse --short HEAD 2>/dev/null || echo no-commit-id)
 IMAGE_NAME := grovemountain/consul-demo-gateway
-VERSION := 0.0.1
+VERSION := 0.0.2
 
 .DEFAULT_GOAL := help
 help: ## List targets & descriptions

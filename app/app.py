@@ -5,6 +5,8 @@ from flask import Flask
 from flask import render_template, send_file, current_app
 import json
 import petshop
+import requests
+import config
 
 # Be the main frame for all applications
 # Loads static page into one tab
@@ -41,12 +43,25 @@ def consul_template():
 def layer4_connect():
     """ Layer 4 demo techniques.  Probably needs one more layer of abstraction.
     """
-    context = petshop.get_pet_shop()
+    context = {'active_services' : config.active_services,
+               'img_width'  : config.img_width,
+               'img_height' : config.img_height,
+              }
     return render_template('layer4-connect.html', **context)
 
 @app.route('/layer7-routing/')
 def layer7_routing():
     return render_template('layer7-routing.html')
+
+@app.route('/img/<service>')
+def get_image(service):
+    """Proxy for returning an image via a backend service.   
+    Image source for Connect proxies returns a localhost which will
+    cause the browser to try to retrieve locally."""
+    address = config.service[service]['upstream']
+    image = requests.get(address) 
+    return send_file(image, cache_timeout=-1)
+
 
 class Upstream:
     def __init__(self, service, address):
