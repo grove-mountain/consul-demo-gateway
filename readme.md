@@ -13,6 +13,8 @@ This is a basic web gateway written in Flask and styled with Bootstrap.
 The web gateway serves two applications
 
 
+
+
 ## Consul Template Rendered Static page
 
 The static app loads some JSON data that comes from Consul from the /app/static directory.  Filename is holy_grail.json.   The format of the data payloads are included in the monty_python.json file in this repo.   Flask reads the JSON payload.  I've also included a rendered HTML fragment.   Feel free to render either just the JSON file or JSON and the HTML fragment.   
@@ -24,7 +26,8 @@ This application is inspired by my daughter and her friends from school that pla
 
 The Connect demo uses a generic image server as a backend/upstream.   The application is very simple and takes two main arguments: NAME, VERSION.   Currently, there are three "services": dogs, cats and rabbits.  You should launch three containers, one for each pet service and hook up the connect endpoints.   The VERSION parameter controls the number of pets served in each image to give a visual representation 
 
-Check the app/static.py for the default upstreams.
+Check the app/static.py for the default upstreams. (https://github.com/grove-mountain/consul-demo-gateway)
+
 
 For Layer 4, if you have things configured correctly each pet category will show the proper pet.
 
