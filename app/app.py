@@ -4,9 +4,9 @@ import random
 from flask import Flask
 from flask import render_template, send_file, current_app
 import json
-import petshop
 import requests
 import config
+import io
 
 # Be the main frame for all applications
 # Loads static page into one tab
@@ -59,8 +59,10 @@ def get_image(service):
     Image source for Connect proxies returns a localhost which will
     cause the browser to try to retrieve locally."""
     address = config.service[service]['upstream']
-    image = requests.get(address) 
-    return send_file(image, cache_timeout=-1)
+    response = requests.get(address) 
+    image = io.BytesIO(response.content)
+    mimetype = response.headers['Content-Type']
+    return send_file(image, mimetype=mimetype, cache_timeout=-1)
 
 
 class Upstream:
