@@ -1,10 +1,17 @@
 # Consul Demo Gateway
 
+## Requirements
+Docker Images:
+grovemountain/consul:1.6.0-beta3
+grovemountain/consul-envoy:1.6.0-beta3-v1.11.0
+grovemountain/consul-demo-gateway:latest
+grovemountain/picture-service:latest
+
+
 This is a basic web gateway written in Flask and styled with Bootstrap.   
 
 The web gateway serves two applications
 
-Docker image: grovemountain/consul-demo-gateway
 
 ## Consul Template Rendered Static page
 
@@ -12,7 +19,6 @@ The static app loads some JSON data that comes from Consul from the ./static dir
 
 ## Consul Connect Layer 4
 
-Docker Image: grovemountain/picture-service
 
 This application is inspired by my daughter and her friends from school that play a game called "Pet Shop".
 
