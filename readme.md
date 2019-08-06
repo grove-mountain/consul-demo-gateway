@@ -15,7 +15,7 @@ The web gateway serves two applications
 
 ## Consul Template Rendered Static page
 
-The static app loads some JSON data that comes from Consul from the ./static directory.   The format of the data payloads are included in the monty_python.json file in this repo.   Flask reads the JSON payload.  I've also included a rendered HTML fragment.   Feel free to render either just the JSON file or JSON and the HTML fragment.   
+The static app loads some JSON data that comes from Consul from the /app/static directory.   The format of the data payloads are included in the monty_python.json file in this repo.   Flask reads the JSON payload.  I've also included a rendered HTML fragment.   Feel free to render either just the JSON file or JSON and the HTML fragment.   
 
 ## Consul Connect Layer 4
 
