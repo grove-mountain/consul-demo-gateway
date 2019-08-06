@@ -4,11 +4,15 @@ This is a basic web gateway written in Flask and styled with Bootstrap.
 
 The web gateway serves two applications
 
+Docker image: grovemountain/consul-demo-gateway
+
 ## Consul Template Rendered Static page
 
 The static app loads some JSON data that comes from Consul from the ./static directory.   The format of the data payloads are included in the monty_python.json file in this repo.   Flask reads the JSON payload.  I've also included a rendered HTML fragment.   Feel free to render either just the JSON file or JSON and the HTML fragment.   
 
 ## Consul Connect Layer 4
+
+Docker Image: grovemountain/picture-service
 
 This application is inspired by my daughter and her friends from school that play a game called "Pet Shop".
 
