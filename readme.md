@@ -24,7 +24,7 @@ The static app loads some JSON data that comes from Consul from the /app/static 
 
 This application is inspired by my daughter and her friends from school that play a game called "Pet Shop".
 
-The Connect demo uses a generic image server as a backend/upstream.   The application is very simple and takes two main arguments: NAME, VERSION.   Currently, there are three "services": dogs, cats and rabbits.  You should launch three containers, one for each pet service and hook up the connect endpoints.   The VERSION parameter controls the number of pets served in each image to give a visual representation 
+The Connect demo uses a generic image server as a backend/upstream.   The application is very simple and takes two main environment variables: NAME, VERSION.   Currently, there are three "services": dogs, cats and rabbits.  You should launch three containers, one for each pet service and hook up the connect endpoints.   The VERSION parameter controls the number of pets served in each image to give a visual representation 
 
 Check the app/static.py for the default upstreams. (https://github.com/grove-mountain/consul-demo-gateway)
 
